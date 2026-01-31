@@ -1,23 +1,22 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyagers 2026 - Acceso</title>
+    <meta charset="UTF-8"><title>Voyagers 2026 - Acceso Maestro</title>
     <style>
-        body { font-family: sans-serif; background: #121212; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: #1e1e1e; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); text-align: center; }
-        input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: none; }
-        button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        body { background: #0a0a0a; color: #00ff41; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: #1a1a1a; padding: 2rem; border: 1px solid #00ff41; border-radius: 8px; width: 300px; text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; background: #000; border: 1px solid #00ff41; color: #00ff41; box-sizing: border-box; }
+        button { width: 100%; background: #00ff41; color: #000; border: none; padding: 10px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>VOYAGERS 2026</h1>
-        <p>Sistema de Logistica P2P Incondicional</p>
+    <div class="login-card">
+        <h2>VOYAGERS 2026</h2>
+        <p>CONTROL MAESTRO</p>
         <form action="/login" method="post">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <button type="submit">Entrar al Panel</button>
+            <input type="text" name="username" placeholder="Usuario (Marcus)" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">INICIAR SESIÓN</button>
         </form>
     </div>
 </body>
