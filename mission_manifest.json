@@ -1,12 +1,5 @@
 ﻿{
-    "project": "Voyagers P2P Logistics",
-    "version": "2026.1.0",
-    "status": "DEVELOPMENT_EXECUTION",
-    "department_goals": {
-        "Aki_CTO": ["Build eCMR system", "Next.js Admin Panel", "PostgreSQL schema"],
-        "Valentina_CMO": ["User Acquisition 1000", "OTIF > 95%", "Recruitment Scripts"],
-        "Lukas_DELTA": ["Zero Debt Ops", "Railway Scaling", "E2EE Security"],
-        "Marcus_CEO_Bot": ["Compliance eFTI 2026", "15% Fee Margin", "Legal Roadmap"]
-    },
-    "compliance": "eFTI / eIDAS 2026 Standards"
+    "master_instruction": "TRABAJO 24/7 SIN DESCANSO HASTA FINALIZAR LISTA",
+    "business_plan_status": "INCONDICIONAL",
+    "bridge_active": true
 }
