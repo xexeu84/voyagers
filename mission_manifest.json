@@ -1,5 +1,50 @@
-﻿{
-    "master_instruction": "TRABAJO 24/7 SIN DESCANSO HASTA FINALIZAR LISTA",
-    "business_plan_status": "INCONDICIONAL",
-    "bridge_active": true
-}
+[
+    {
+        "id": 1,
+        "dept": "AKI",
+        "task": "Configurar PostgreSQL y Esquema Participantes/Hitos",
+        "status": "PENDING"
+    },
+    {
+        "id": 2,
+        "dept": "AKI",
+        "task": "Implementar Sistema de Sesion Persistente PWA",
+        "status": "PENDING"
+    },
+    {
+        "id": 3,
+        "dept": "LUKAS",
+        "task": "Generador de eCMR Digital (Albaran Legal 2026)",
+        "status": "PENDING"
+    },
+    {
+        "id": 4,
+        "dept": "VALENTINA",
+        "task": "Activacion de Bot de Reclutamiento con Guion IA",
+        "status": "PENDING"
+    },
+    {
+        "id": 5,
+        "dept": "LUKAS",
+        "task": "Integracion API Mapas y Calculo de Huella CO2",
+        "status": "PENDING"
+    },
+    {
+        "id": 6,
+        "dept": "VALENTINA",
+        "task": "Despliegue de Landing Pages Dinamicas por Ruta",
+        "status": "PENDING"
+    },
+    {
+        "id": 7,
+        "dept": "AKI",
+        "task": "Modulo de Pagos Escrow (Retencion 15% Comision)",
+        "status": "PENDING"
+    },
+    {
+        "id": 8,
+        "dept": "MARCUS_BOT",
+        "task": "Auditoria de Cumplimiento Legal eFTI/eIDAS",
+        "status": "PENDING"
+    }
+]
