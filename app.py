@@ -4,21 +4,35 @@ import os
 app = Flask(__name__)
 app.secret_key = "VOYAGERS_2026_TOTAL_KEY"
 
+# Base de datos simulada de usuarios (En producción Aki usará GitHub/SQL)
+usuarios_db = {"marcus": "Voyagers2026!"}
+
 @app.route('/')
 def index():
-    if session.get('ceo_auth'):
-        return render_template('dashboard.html')
+    if session.get('auth'): return render_template('dashboard.html')
     return render_template('login.html')
+
+@app.route('/register_page')
+def register_page():
+    return render_template('register.html')
+
+@app.route('/register', methods=['POST'])
+def register():
+    email = request.form.get('email')
+    # Lógica de Lukas: Evitar duplicados y asignar rol
+    usuarios_db[email] = request.form.get('password')
+    session['auth'] = True
+    session['user_role'] = request.form.get('role')
+    return redirect(url_for('index'))
 
 @app.route('/login', methods=['POST'])
 def login():
-    # Acceso Marcus nivel CEO
-    if request.form.get('username') == "marcus" and request.form.get('password') == "Voyagers2026!":
-        session['ceo_auth'] = True
+    user = request.form.get('username')
+    pw = request.form.get('password')
+    if user in usuarios_db and usuarios_db[user] == pw:
+        session['auth'] = True
         return redirect(url_for('index'))
-    return "Acceso Denegado"
+    return "<h1>Acceso Denegado</h1>"
 
 if __name__ == "__main__":
-    # Forzar el puerto que Railway asigna dinámicamente
-    port = int(os.environ.get("PORT", 8080))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 8080)))
