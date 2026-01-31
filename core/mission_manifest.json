@@ -1,0 +1,34 @@
+﻿{
+    "meta_global": "Ejecucion incondicional 24/7 de plataforma logistica P2P",
+    "kpis_objetivo": {
+        "OTIF": ">95%",
+        "comision": "15%",
+        "normativa": "eCMR/eFTI 2026"
+    },
+    "backlog_misiones": [
+        {
+            "fase": "1. INFRAESTRUCTURA",
+            "tareas": [
+                "Configurar base de datos PostgreSQL: Tablas Participantes y Hitos [cite: 91, 133]",
+                "Implementar arquitectura Next.js (Admin) y Flutter (App) [cite: 16, 18]",
+                "Activar SSL/WAF y cifrado de extremo a extremo (E2EE) [cite: 53, 81]"
+            ]
+        },
+        {
+            "fase": "2. LOGISTICA E IA",
+            "tareas": [
+                "Integrar motor de IA para optimizacion de rutas y calculo de CO2 [cite: 7, 114]",
+                "Desarrollar modulo eCMR con firma digital certificada eIDAS [cite: 67, 68]",
+                "Implementar rastreo GPS en tiempo real con Redis y WebSockets [cite: 23, 35]"
+            ]
+        },
+        {
+            "fase": "3. COMERCIAL Y CAPTACION",
+            "tareas": [
+                "Lanzar bot de Valentina con guion de reclutamiento de colaboradores ",
+                "Configurar landing pages dinámicas para captacion de clientes [cite: 120]",
+                "Activar sistema de pagos Escrow con verificacion KYC [cite: 68]"
+            ]
+        }
+    ]
+}
