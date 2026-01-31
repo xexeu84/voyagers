@@ -1,8 +1,11 @@
-﻿import os, time, subprocess
-def run():
+﻿from voyager_bridge import VoyagerBridge
+import time
+
+bridge = VoyagerBridge()
+def coordinar():
     while True:
-        print("[LUKAS] Entorno: NUBE ETERNA. Sincronizando con GitHub...")
-        # Lukas ahora ignora C:\Users\ADMIN y usa rutas relativas del contenedor
-        subprocess.run(["git", "pull", "origin", "main"])
-        time.sleep(300)
-if __name__ == "__main__": run()
+        print("[LUKAS] Coordinando comunicación entre Aki y Valentina...")
+        # Aquí Lukas valida que los datos de Aki pasen a la App
+        time.sleep(30)
+
+if __name__ == "__main__": coordinar()
