@@ -20,12 +20,11 @@ def login():
 
 @app.route('/api/v1/metrics')
 def metrics():
-    # Indicadores críticos de éxito (KPIs) [cite: 108, 109]
     return jsonify({
-        "OTIF": "95.2%",
+        "OTIF": "95.2%", [cite: 110]
         "Active_Routes": 0,
-        "eCMR_Compliance": "Full",
-        "CO2_Level": "Monitoring"
+        "eCMR_Compliance": "Full", [cite: 26]
+        "CO2_Level": "Monitoring" [cite: 114]
     })
 
 if __name__ == "__main__":
