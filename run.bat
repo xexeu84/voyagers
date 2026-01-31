@@ -1,1 +1,0 @@
-node voyagers_god_mode.js

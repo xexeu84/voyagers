@@ -1,1 +1,0 @@
-﻿/* Service Worker para modo offline */

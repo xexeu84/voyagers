@@ -1,6 +1,0 @@
-﻿{
-    "alias":  "V-SYNC",
-    "agent_owner":  "Lukas (DELTA)",
-    "purpose":  "Automodificación y Purgación de Conflictos",
-    "command":  "git pull origin main --rebase \u0026\u0026 git push origin main"
-}
