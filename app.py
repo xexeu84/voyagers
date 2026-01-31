@@ -1,13 +1,12 @@
-﻿from flask import Flask, jsonify
-from core.routes import RouteManager
+﻿from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
-manager = RouteManager()
 
 @app.route('/')
-def status():
-    return jsonify({"status": "ONLINE", "project": "Voyagers", "cloud": "Active"})
+def home():
+    return render_template('index.html')
 
 if __name__ == "__main__":
-    import os
-    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
