@@ -1,0 +1,10 @@
+console.log('--- INICIANDO SIMULACIÓN VOYAGERS ---');
+console.log('1. Autenticación: Usuario Marcos_V conectado vía Google.');
+console.log('2. Seguridad: IA comparando Selfie con DNI... [OK] - Confianza 98.2%');
+console.log('3. Matchmaker: Asignando PKG-002 (Destino: Barcelona) al viajero.');
+console.log('4. Legal: Generando Salvoconducto de transporte para el equipaje...');
+console.log('5. Billetera: Bloqueando 16.80€ en Saldo Pendiente.');
+console.log('--- VIAJE EN CURSO ---');
+console.log('6. Entrega: Escaneando código QR en Barcelona Sants...');
+console.log('7. Finalización: Saldo Disponible actualizado (+16.80€).');
+console.log('--- SIMULACIÓN COMPLETADA CON ÉXITO ---');

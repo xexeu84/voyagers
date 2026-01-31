@@ -1,0 +1,437 @@
+[debug] [2026-01-30T11:03:18.296Z] ----------------------------------------------------------------------
+[debug] [2026-01-30T11:03:18.300Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --project gen-lang-client-0559117850
+[debug] [2026-01-30T11:03:18.301Z] CLI Version:   15.4.0
+[debug] [2026-01-30T11:03:18.301Z] Platform:      win32
+[debug] [2026-01-30T11:03:18.301Z] Node Version:  v24.13.0
+[debug] [2026-01-30T11:03:18.301Z] Time:          Fri Jan 30 2026 12:03:18 GMT+0100 (hora estándar de Europa central)
+[debug] [2026-01-30T11:03:18.302Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-30T11:03:21.175Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-30T11:03:21.175Z] > authorizing via signed-in user (xexeu84@gmail.com)
+[debug] [2026-01-30T11:03:21.176Z] [iam] checking project gen-lang-client-0559117850 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2026-01-30T11:03:21.177Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:21.177Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:21.178Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions [none]
+[debug] [2026-01-30T11:03:21.178Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions x-goog-quota-user=projects/gen-lang-client-0559117850
+[debug] [2026-01-30T11:03:21.178Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-01-30T11:03:21.922Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions 200
+[debug] [2026-01-30T11:03:21.922Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-01-30T11:03:21.923Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:21.923Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:21.923Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-01-30T11:03:21.923Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-01-30T11:03:22.576Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-01-30T11:03:22.576Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'gen-lang-client-0559117850'...
+[info] 
+[info] i  deploying functions 
+[debug] [2026-01-30T11:03:22.580Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:22.580Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:22.580Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 [none]
+[debug] [2026-01-30T11:03:22.781Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 200
+[debug] [2026-01-30T11:03:22.781Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 {"projectNumber":"52708680132","projectId":"gen-lang-client-0559117850","lifecycleState":"ACTIVE","name":"voyagers-logistica","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-12-25T22:04:27.879597Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-01-30T11:03:22.785Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:22.785Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:22.785Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0559117850/adminSdkConfig [none]
+[debug] [2026-01-30T11:03:23.046Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0559117850/adminSdkConfig 200
+[debug] [2026-01-30T11:03:23.046Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0559117850/adminSdkConfig {"projectId":"gen-lang-client-0559117850","storageBucket":"gen-lang-client-0559117850.firebasestorage.app"}
+[debug] [2026-01-30T11:03:23.048Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-30T11:03:24.065Z] > [functions] package.json contents: {
+  "name": "functions",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-functions": "^5.0.0",
+    "firebase-admin": "^12.0.0",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
+[debug] [2026-01-30T11:03:24.065Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-01-30T11:03:24.067Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-30T11:03:24.080Z] Found firebase-functions binary at 'C:\Users\ADMIN\Voyagers-Cloud\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8649
+
+[debug] [2026-01-30T11:03:25.118Z] Got response from /__/functions.yaml {"endpoints":{"apiTelegram":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"apiTelegram"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-01-30T11:03:29.146Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-30T11:03:29.146Z] > authorizing via signed-in user (xexeu84@gmail.com)
+[debug] [2026-01-30T11:03:29.146Z] [iam] checking project gen-lang-client-0559117850 for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-01-30T11:03:29.147Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:29.147Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:29.147Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions [none]
+[debug] [2026-01-30T11:03:29.147Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions x-goog-quota-user=projects/gen-lang-client-0559117850
+[debug] [2026-01-30T11:03:29.147Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-01-30T11:03:29.845Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions 200
+[debug] [2026-01-30T11:03:29.845Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-01-30T11:03:29.846Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:29.846Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:29.846Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/gen-lang-client-0559117850/instances pageSize=100&pageToken=
+[debug] [2026-01-30T11:03:30.584Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/gen-lang-client-0559117850/instances 200
+[debug] [2026-01-30T11:03:30.584Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/gen-lang-client-0559117850/instances {}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\ADMIN\Voyagers-Cloud\functions (29.61 KB) for uploading 
+[debug] [2026-01-30T11:03:30.622Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:30.622Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:30.622Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/-/functions [none]
+[debug] [2026-01-30T11:03:31.280Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/-/functions 200
+[debug] [2026-01-30T11:03:31.280Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/-/functions {}
+[debug] [2026-01-30T11:03:31.280Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:31.280Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:31.280Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/gen-lang-client-0559117850/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2026-01-30T11:03:32.266Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/gen-lang-client-0559117850/locations/-/functions 200
+[debug] [2026-01-30T11:03:32.266Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/gen-lang-client-0559117850/locations/-/functions {}
+[debug] [2026-01-30T11:03:32.270Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:32.270Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:32.270Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 [none]
+[debug] [2026-01-30T11:03:32.935Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 200
+[debug] [2026-01-30T11:03:32.935Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 {"projectNumber":"52708680132","projectId":"gen-lang-client-0559117850","lifecycleState":"ACTIVE","name":"voyagers-logistica","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-12-25T22:04:27.879597Z"}
+[debug] [2026-01-30T11:03:32.936Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:32.936Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:32.936Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/gen-lang-client-0559117850/billingInfo [none]
+[debug] [2026-01-30T11:03:33.187Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/gen-lang-client-0559117850/billingInfo 200
+[debug] [2026-01-30T11:03:33.187Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/gen-lang-client-0559117850/billingInfo {"name":"projects/gen-lang-client-0559117850/billingInfo","projectId":"gen-lang-client-0559117850","billingAccountName":"billingAccounts/010DA6-CFE0A6-3BCB41","billingEnabled":true}
+[debug] [2026-01-30T11:03:33.188Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2026-01-30T11:03:33.188Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:33.188Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:33.188Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions [none]
+[debug] [2026-01-30T11:03:33.188Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions x-goog-quota-user=projects/gen-lang-client-0559117850
+[debug] [2026-01-30T11:03:33.189Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-01-30T11:03:33.371Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions 200
+[debug] [2026-01-30T11:03:33.371Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-01-30T11:03:33.371Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2026-01-30T11:03:33.372Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:33.372Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:33.372Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2026-01-30T11:03:33.372Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2026-01-30T11:03:45.007Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2026-01-30T11:03:45.007Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/19c63cfa-3377-456d-8b85-708a2a2d1d87.zip?GoogleAccessId=service-52708680132@gcf-admin-robot.iam.gserviceaccount.com&Expires=1769772825&Signature=OSrTyrpR6uC56e9QuxEn3WioJqmHu4r3ANVWivyTNIoYHfRik6VLKiExo8XXa8XfW%2Fehm4j3Je5BuhVHgVZyYXxmG5m4w8q9C11HEoBi6oS5MFqIwWBTUWiIz0R7InPbzozQdKW72jGoCKSZ2OZQunTxhcUsLmRQoOLOhzwrWCpMs4VjZgpovW4xmoxxdN8yo4xcGwovyj3lPW%2FN%2BB8ct2btsSrxKN%2Fpr%2FLaDcTbEn%2FC%2FhDVwBUP0hpS1bOt9mH4LGqew4Y%2FrIqAqJvwoBMdH9lrE5AUWMODFXObxgqy6QXVOv6cXigMbcx8qk0tPqateoY6uHoznCiCU%2FhSkqEKbw%3D%3D"}
+[debug] [2026-01-30T11:03:45.007Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/19c63cfa-3377-456d-8b85-708a2a2d1d87.zip GoogleAccessId=service-52708680132%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1769772825&Signature=OSrTyrpR6uC56e9QuxEn3WioJqmHu4r3ANVWivyTNIoYHfRik6VLKiExo8XXa8XfW%2Fehm4j3Je5BuhVHgVZyYXxmG5m4w8q9C11HEoBi6oS5MFqIwWBTUWiIz0R7InPbzozQdKW72jGoCKSZ2OZQunTxhcUsLmRQoOLOhzwrWCpMs4VjZgpovW4xmoxxdN8yo4xcGwovyj3lPW%2FN%2BB8ct2btsSrxKN%2Fpr%2FLaDcTbEn%2FC%2FhDVwBUP0hpS1bOt9mH4LGqew4Y%2FrIqAqJvwoBMdH9lrE5AUWMODFXObxgqy6QXVOv6cXigMbcx8qk0tPqateoY6uHoznCiCU%2FhSkqEKbw%3D%3D
+[debug] [2026-01-30T11:03:45.008Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/19c63cfa-3377-456d-8b85-708a2a2d1d87.zip [stream]
+[debug] [2026-01-30T11:03:45.466Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/19c63cfa-3377-456d-8b85-708a2a2d1d87.zip 200
+[debug] [2026-01-30T11:03:45.466Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/19c63cfa-3377-456d-8b85-708a2a2d1d87.zip [omitted]
+[info] +  functions: functions source uploaded successfully 
+[info] i  functions: creating Node.js 20 (1st Gen) function apiTelegram(us-central1)... 
+[debug] [2026-01-30T11:03:45.470Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:45.470Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:45.471Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions [none]
+[debug] [2026-01-30T11:03:45.471Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions {"name":"projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram","sourceUploadUrl":"https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/19c63cfa-3377-456d-8b85-708a2a2d1d87.zip?GoogleAccessId=service-52708680132@gcf-admin-robot.iam.gserviceaccount.com&Expires=1769772825&Signature=OSrTyrpR6uC56e9QuxEn3WioJqmHu4r3ANVWivyTNIoYHfRik6VLKiExo8XXa8XfW%2Fehm4j3Je5BuhVHgVZyYXxmG5m4w8q9C11HEoBi6oS5MFqIwWBTUWiIz0R7InPbzozQdKW72jGoCKSZ2OZQunTxhcUsLmRQoOLOhzwrWCpMs4VjZgpovW4xmoxxdN8yo4xcGwovyj3lPW%2FN%2BB8ct2btsSrxKN%2Fpr%2FLaDcTbEn%2FC%2FhDVwBUP0hpS1bOt9mH4LGqew4Y%2FrIqAqJvwoBMdH9lrE5AUWMODFXObxgqy6QXVOv6cXigMbcx8qk0tPqateoY6uHoznCiCU%2FhSkqEKbw%3D%3D","entryPoint":"apiTelegram","runtime":"nodejs20","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"f52ee08029a8f70401bbe46c2f6870c90138a363"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"gen-lang-client-0559117850\",\"storageBucket\":\"gen-lang-client-0559117850.firebasestorage.app\"}","GCLOUD_PROJECT":"gen-lang-client-0559117850","EVENTARC_CLOUD_EVENT_SOURCE":"projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2026-01-30T11:03:46.428Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions 400
+[debug] [2026-01-30T11:03:46.429Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions {"error":{"code":400,"message":"Failed to create 1st Gen function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram: Default service account '52708680132-compute@developer.gserviceaccount.com' doesn't exist. Please recreate this account or specify a different account. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.","status":"FAILED_PRECONDITION"}}
+[warn] !  functions: failed to create function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram 
+[error] Failed to create function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram
+[debug] [2026-01-30T11:03:46.436Z] Total Function Deployment time: 962
+[debug] [2026-01-30T11:03:46.436Z] 1 Functions Deployed
+[debug] [2026-01-30T11:03:46.436Z] 1 Functions Errored
+[debug] [2026-01-30T11:03:46.436Z] 0 Function Deployments Aborted
+[debug] [2026-01-30T11:03:46.436Z] Average Function Deployment time: 961
+[info] 
+[info] Functions deploy had errors with the following functions:
+	apiTelegram(us-central1)
+[debug] [2026-01-30T11:03:46.517Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[debug] [2026-01-30T11:03:46.518Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:46.518Z] Checked if tokens are valid: true, expires at: 1769772052899
+[debug] [2026-01-30T11:03:46.519Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts [none]
+[debug] [2026-01-30T11:03:47.277Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts 404
+[debug] [2026-01-30T11:03:47.277Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[debug] [2026-01-30T11:03:47.277Z] Failed to check artifact cleanup policy for region us-central1: Request to https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts had HTTP Error: 404, Requested entity was not found. {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts had HTTP Error: 404, Requested entity was not found.","status":404}
+[debug] [2026-01-30T11:03:47.277Z] Functions deploy failed.
+[debug] [2026-01-30T11:03:47.278Z] {
+  "endpoint": {
+    "id": "apiTelegram",
+    "project": "gen-lang-client-0559117850",
+    "region": "us-central1",
+    "entryPoint": "apiTelegram",
+    "platform": "gcfv1",
+    "runtime": "nodejs20",
+    "httpsTrigger": {},
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"gen-lang-client-0559117850\",\"storageBucket\":\"gen-lang-client-0559117850.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "gen-lang-client-0559117850",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "f52ee08029a8f70401bbe46c2f6870c90138a363",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "Failed to create 1st Gen function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram: Default service account '52708680132-compute@developer.gserviceaccount.com' doesn't exist. Please recreate this account or specify a different account. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.",
+            "status": "FAILED_PRECONDITION"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "Request to https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions had HTTP Error: 400, Failed to create 1st Gen function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram: Default service account '52708680132-compute@developer.gserviceaccount.com' doesn't exist. Please recreate this account or specify a different account. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[debug] [2026-01-30T11:03:47.328Z] Error: Failed to create function apiTelegram in region us-central1
+    at C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:53:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Fabricator.createV1Function (C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:194:32)
+    at async Fabricator.createEndpoint (C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:135:13)
+    at async handle (C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:90:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2026-01-30T11:08:59.287Z] ----------------------------------------------------------------------
+[debug] [2026-01-30T11:08:59.291Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --project gen-lang-client-0559117850
+[debug] [2026-01-30T11:08:59.292Z] CLI Version:   15.4.0
+[debug] [2026-01-30T11:08:59.292Z] Platform:      win32
+[debug] [2026-01-30T11:08:59.292Z] Node Version:  v24.13.0
+[debug] [2026-01-30T11:08:59.292Z] Time:          Fri Jan 30 2026 12:08:59 GMT+0100 (hora estándar de Europa central)
+[debug] [2026-01-30T11:08:59.293Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-30T11:09:01.571Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-30T11:09:01.571Z] > authorizing via signed-in user (xexeu84@gmail.com)
+[debug] [2026-01-30T11:09:01.572Z] [iam] checking project gen-lang-client-0559117850 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2026-01-30T11:09:01.573Z] Checked if tokens are valid: false, expires at: 1769772052899
+[debug] [2026-01-30T11:09:01.573Z] Checked if tokens are valid: false, expires at: 1769772052899
+[debug] [2026-01-30T11:09:01.573Z] > refreshing access token with scopes: []
+[debug] [2026-01-30T11:09:01.575Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-30T11:09:01.575Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-30T11:09:01.691Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-30T11:09:01.691Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-30T11:09:01.698Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions [none]
+[debug] [2026-01-30T11:09:01.698Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions x-goog-quota-user=projects/gen-lang-client-0559117850
+[debug] [2026-01-30T11:09:01.698Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-01-30T11:09:01.873Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions 200
+[debug] [2026-01-30T11:09:01.874Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-01-30T11:09:01.874Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:01.874Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:01.874Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-01-30T11:09:01.874Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-01-30T11:09:02.530Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-01-30T11:09:02.530Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/gen-lang-client-0559117850/serviceAccounts/gen-lang-client-0559117850@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'gen-lang-client-0559117850'...
+[info] 
+[info] i  deploying functions 
+[debug] [2026-01-30T11:09:02.534Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:02.534Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:02.534Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 [none]
+[debug] [2026-01-30T11:09:02.708Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 200
+[debug] [2026-01-30T11:09:02.708Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 {"projectNumber":"52708680132","projectId":"gen-lang-client-0559117850","lifecycleState":"ACTIVE","name":"voyagers-logistica","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-12-25T22:04:27.879597Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-01-30T11:09:02.712Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:02.712Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:02.712Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0559117850/adminSdkConfig [none]
+[debug] [2026-01-30T11:09:03.012Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0559117850/adminSdkConfig 200
+[debug] [2026-01-30T11:09:03.012Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gen-lang-client-0559117850/adminSdkConfig {"projectId":"gen-lang-client-0559117850","storageBucket":"gen-lang-client-0559117850.firebasestorage.app"}
+[debug] [2026-01-30T11:09:03.013Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-01-30T11:09:04.008Z] > [functions] package.json contents: {
+  "name": "functions",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-functions": "^5.0.0",
+    "firebase-admin": "^12.0.0",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
+[debug] [2026-01-30T11:09:04.008Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-01-30T11:09:04.009Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-01-30T11:09:04.018Z] Found firebase-functions binary at 'C:\Users\ADMIN\Voyagers-Cloud\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8448
+
+[debug] [2026-01-30T11:09:04.949Z] Got response from /__/functions.yaml {"endpoints":{"apiTelegram":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"apiTelegram"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-01-30T11:09:08.977Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-30T11:09:08.977Z] > authorizing via signed-in user (xexeu84@gmail.com)
+[debug] [2026-01-30T11:09:08.977Z] [iam] checking project gen-lang-client-0559117850 for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-01-30T11:09:08.978Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:08.978Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:08.978Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions [none]
+[debug] [2026-01-30T11:09:08.978Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions x-goog-quota-user=projects/gen-lang-client-0559117850
+[debug] [2026-01-30T11:09:08.978Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-01-30T11:09:09.599Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions 200
+[debug] [2026-01-30T11:09:09.600Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-01-30T11:09:09.600Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:09.600Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:09.600Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/gen-lang-client-0559117850/instances pageSize=100&pageToken=
+[debug] [2026-01-30T11:09:10.344Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/gen-lang-client-0559117850/instances 200
+[debug] [2026-01-30T11:09:10.344Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/gen-lang-client-0559117850/instances {}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\ADMIN\Voyagers-Cloud\functions (29.59 KB) for uploading 
+[debug] [2026-01-30T11:09:10.384Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:10.384Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:10.384Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/-/functions [none]
+[debug] [2026-01-30T11:09:10.975Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/-/functions 200
+[debug] [2026-01-30T11:09:10.976Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/-/functions {}
+[debug] [2026-01-30T11:09:10.976Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:10.976Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:10.976Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/gen-lang-client-0559117850/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2026-01-30T11:09:11.977Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/gen-lang-client-0559117850/locations/-/functions 200
+[debug] [2026-01-30T11:09:11.977Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/gen-lang-client-0559117850/locations/-/functions {}
+[debug] [2026-01-30T11:09:11.981Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:11.981Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:11.981Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 [none]
+[debug] [2026-01-30T11:09:12.173Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 200
+[debug] [2026-01-30T11:09:12.173Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850 {"projectNumber":"52708680132","projectId":"gen-lang-client-0559117850","lifecycleState":"ACTIVE","name":"voyagers-logistica","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-12-25T22:04:27.879597Z"}
+[debug] [2026-01-30T11:09:12.174Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:12.174Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:12.174Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/gen-lang-client-0559117850/billingInfo [none]
+[debug] [2026-01-30T11:09:12.911Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/gen-lang-client-0559117850/billingInfo 200
+[debug] [2026-01-30T11:09:12.911Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/gen-lang-client-0559117850/billingInfo {"name":"projects/gen-lang-client-0559117850/billingInfo","projectId":"gen-lang-client-0559117850","billingAccountName":"billingAccounts/010DA6-CFE0A6-3BCB41","billingEnabled":true}
+[debug] [2026-01-30T11:09:12.912Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2026-01-30T11:09:12.912Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:12.912Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:12.912Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions [none]
+[debug] [2026-01-30T11:09:12.912Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions x-goog-quota-user=projects/gen-lang-client-0559117850
+[debug] [2026-01-30T11:09:12.912Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-01-30T11:09:13.043Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions 200
+[debug] [2026-01-30T11:09:13.043Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gen-lang-client-0559117850:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-01-30T11:09:13.044Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2026-01-30T11:09:13.044Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:13.044Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:13.044Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2026-01-30T11:09:13.044Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2026-01-30T11:09:13.573Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2026-01-30T11:09:13.574Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/8381b719-829d-416d-a872-ca4c9e38bd8b.zip?GoogleAccessId=service-52708680132@gcf-admin-robot.iam.gserviceaccount.com&Expires=1769773153&Signature=ZWueqajn0qRCClYCyCPfeL5Ok29HLjaRbjKaYgovcvWG5J99cv6Ay5nhbFBsI8v8F%2BnQpXhtKIm666soVviS2MoRphdBp54YICBgCxT1oABOqeTjTOY6nth1fkt1K9ukWZOgxiJcDZ5GqTE2LxviMQ5yEVMjWXXisLSBqZF8%2B2ma4z0VTKDG28XqoT2RQpfVOCNhR88akREgdnFl8juIoiaur2r41QLYi7iEhog49eShkFKIdmf98iTq9F3%2FUW2mGvhv7%2FG3W6%2FfdqNvOT9Fy9wm67Y1%2BJvPCfG%2B15hzepIASql1TRMItEAKRd2XMfCszg7A5qyNcZ5iRDqBizXkpg%3D%3D"}
+[debug] [2026-01-30T11:09:13.574Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/8381b719-829d-416d-a872-ca4c9e38bd8b.zip GoogleAccessId=service-52708680132%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1769773153&Signature=ZWueqajn0qRCClYCyCPfeL5Ok29HLjaRbjKaYgovcvWG5J99cv6Ay5nhbFBsI8v8F%2BnQpXhtKIm666soVviS2MoRphdBp54YICBgCxT1oABOqeTjTOY6nth1fkt1K9ukWZOgxiJcDZ5GqTE2LxviMQ5yEVMjWXXisLSBqZF8%2B2ma4z0VTKDG28XqoT2RQpfVOCNhR88akREgdnFl8juIoiaur2r41QLYi7iEhog49eShkFKIdmf98iTq9F3%2FUW2mGvhv7%2FG3W6%2FfdqNvOT9Fy9wm67Y1%2BJvPCfG%2B15hzepIASql1TRMItEAKRd2XMfCszg7A5qyNcZ5iRDqBizXkpg%3D%3D
+[debug] [2026-01-30T11:09:13.574Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/8381b719-829d-416d-a872-ca4c9e38bd8b.zip [stream]
+[debug] [2026-01-30T11:09:13.966Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/8381b719-829d-416d-a872-ca4c9e38bd8b.zip 200
+[debug] [2026-01-30T11:09:13.966Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/8381b719-829d-416d-a872-ca4c9e38bd8b.zip [omitted]
+[info] +  functions: functions source uploaded successfully 
+[info] i  functions: creating Node.js 20 (1st Gen) function apiTelegram(us-central1)... 
+[debug] [2026-01-30T11:09:13.970Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:13.970Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:13.970Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions [none]
+[debug] [2026-01-30T11:09:13.970Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions {"name":"projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram","sourceUploadUrl":"https://storage.googleapis.com/uploads-392538983003.us-central1.cloudfunctions.appspot.com/8381b719-829d-416d-a872-ca4c9e38bd8b.zip?GoogleAccessId=service-52708680132@gcf-admin-robot.iam.gserviceaccount.com&Expires=1769773153&Signature=ZWueqajn0qRCClYCyCPfeL5Ok29HLjaRbjKaYgovcvWG5J99cv6Ay5nhbFBsI8v8F%2BnQpXhtKIm666soVviS2MoRphdBp54YICBgCxT1oABOqeTjTOY6nth1fkt1K9ukWZOgxiJcDZ5GqTE2LxviMQ5yEVMjWXXisLSBqZF8%2B2ma4z0VTKDG28XqoT2RQpfVOCNhR88akREgdnFl8juIoiaur2r41QLYi7iEhog49eShkFKIdmf98iTq9F3%2FUW2mGvhv7%2FG3W6%2FfdqNvOT9Fy9wm67Y1%2BJvPCfG%2B15hzepIASql1TRMItEAKRd2XMfCszg7A5qyNcZ5iRDqBizXkpg%3D%3D","entryPoint":"apiTelegram","runtime":"nodejs20","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"d489f3385f794e32fb87eb09d5a311f21e96d724"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"gen-lang-client-0559117850\",\"storageBucket\":\"gen-lang-client-0559117850.firebasestorage.app\"}","GCLOUD_PROJECT":"gen-lang-client-0559117850","EVENTARC_CLOUD_EVENT_SOURCE":"projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2026-01-30T11:09:14.868Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions 400
+[debug] [2026-01-30T11:09:14.868Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions {"error":{"code":400,"message":"Failed to create 1st Gen function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram: Default service account '52708680132-compute@developer.gserviceaccount.com' doesn't exist. Please recreate this account or specify a different account. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.","status":"FAILED_PRECONDITION"}}
+[warn] !  functions: failed to create function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram 
+[error] Failed to create function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram
+[debug] [2026-01-30T11:09:14.874Z] Total Function Deployment time: 901
+[debug] [2026-01-30T11:09:14.874Z] 1 Functions Deployed
+[debug] [2026-01-30T11:09:14.874Z] 1 Functions Errored
+[debug] [2026-01-30T11:09:14.874Z] 0 Function Deployments Aborted
+[debug] [2026-01-30T11:09:14.874Z] Average Function Deployment time: 900
+[info] 
+[info] Functions deploy had errors with the following functions:
+	apiTelegram(us-central1)
+[debug] [2026-01-30T11:09:14.949Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[debug] [2026-01-30T11:09:14.950Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:14.950Z] Checked if tokens are valid: true, expires at: 1769774940691
+[debug] [2026-01-30T11:09:14.950Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts [none]
+[debug] [2026-01-30T11:09:15.752Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts 404
+[debug] [2026-01-30T11:09:15.752Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[debug] [2026-01-30T11:09:15.752Z] Failed to check artifact cleanup policy for region us-central1: Request to https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts had HTTP Error: 404, Requested entity was not found. {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://artifactregistry.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/repositories/gcf-artifacts had HTTP Error: 404, Requested entity was not found.","status":404}
+[debug] [2026-01-30T11:09:15.753Z] Functions deploy failed.
+[debug] [2026-01-30T11:09:15.753Z] {
+  "endpoint": {
+    "id": "apiTelegram",
+    "project": "gen-lang-client-0559117850",
+    "region": "us-central1",
+    "entryPoint": "apiTelegram",
+    "platform": "gcfv1",
+    "runtime": "nodejs20",
+    "httpsTrigger": {},
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"gen-lang-client-0559117850\",\"storageBucket\":\"gen-lang-client-0559117850.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "gen-lang-client-0559117850",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "d489f3385f794e32fb87eb09d5a311f21e96d724",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "Failed to create 1st Gen function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram: Default service account '52708680132-compute@developer.gserviceaccount.com' doesn't exist. Please recreate this account or specify a different account. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.",
+            "status": "FAILED_PRECONDITION"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "Request to https://cloudfunctions.googleapis.com/v1/projects/gen-lang-client-0559117850/locations/us-central1/functions had HTTP Error: 400, Failed to create 1st Gen function projects/gen-lang-client-0559117850/locations/us-central1/functions/apiTelegram: Default service account '52708680132-compute@developer.gserviceaccount.com' doesn't exist. Please recreate this account or specify a different account. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[debug] [2026-01-30T11:09:15.793Z] Error: Failed to create function apiTelegram in region us-central1
+    at C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:53:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Fabricator.createV1Function (C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:194:32)
+    at async Fabricator.createEndpoint (C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:135:13)
+    at async handle (C:\Users\ADMIN\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:90:17)
+[error] 
+[error] Error: There was an error deploying functions

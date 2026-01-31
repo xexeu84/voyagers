@@ -1,0 +1,6 @@
+﻿{
+    "status": "active",
+    "authorized_agents": ["Aki", "Lukas", "Valentina", "Marcus"],
+    "permissions": 9.7,
+    "current_task": "system_stabilization"
+}

@@ -1,0 +1,25 @@
+
+name: Deploy to Google Cloud
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: "${{ secrets.GCP_SA_KEY }}"
+      - name: Deploy Cloud Function
+        run: |
+          gcloud functions deploy aki-telegram-py \
+          --gen2 \
+          --runtime=python310 \
+          --region=europe-west3 \
+          --trigger-http \
+          --entry-point=api_telegram \
+          --project=gen-lang-client-0559117850 \
+          --allow-unauthenticated
+

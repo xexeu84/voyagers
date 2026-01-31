@@ -1,0 +1,15 @@
+node_modules/
+.next/
+user_data/
+.venv/
+*.pyc
+__pycache__/
+.expo/
+*.dll
+*.exe
+.env
+.git/
+token.json
+credentials.json
+secrets/
+*.env

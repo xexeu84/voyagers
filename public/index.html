@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Expires" content="0">
+    <title>VOYAGERS | SISTEMA CENTRAL v8.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-black text-zinc-400 font-mono">
+    <div class="border-b border-cyan-900/50 p-4 flex justify-between items-center bg-zinc-900/20">
+        <h1 class="text-cyan-500 font-black tracking-widest text-xl">VOYAGERS_CORE</h1>
+        <div class="text-[10px] space-x-4">
+            <span class="text-green-500">AKI: ONLINE</span>
+            <span class="text-green-500">VALENTINA: ONLINE</span>
+            <span class="text-green-500">LUKAS: ONLINE</span>
+        </div>
+    </div>
+    
+    <main class="p-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4" id="market-grid"></div>
+
+        <div class="bg-zinc-900 border border-zinc-800 p-4 rounded-lg">
+            <h2 class="text-xs font-bold text-zinc-500 mb-4 uppercase text-center">Consola de Agentes</h2>
+            <div id="bot-logs" class="h-96 overflow-y-auto text-[9px] text-cyan-600 leading-tight p-2 bg-black/50 rounded">
+                > Sistema iniciado...
+                > Esperando interacción del Director...
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const data = [
+            { id: "VOY-7822", r: "MAD > MEX", p: "0.50€/kg", s: "Aéreo", icon: "plane" },
+            { id: "VOY-1102", r: "BCN > VLC", p: "0.20€/kg", s: "Terrestre", icon: "truck" }
+        ];
+
+        document.getElementById('market-grid').innerHTML = data.map(i => `
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl border-l-4 border-l-cyan-600 hover:bg-zinc-800 transition">
+                <div class="flex justify-between text-[10px] mb-4 text-zinc-500 font-bold uppercase">
+                    <span>${i.id}</span><span><i class="fas fa-${i.icon}"></i> ${i.s}</span>
+                </div>
+                <div class="text-2xl font-black text-white mb-6 tracking-tighter">${i.r}</div>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-cyan-400">${i.p}</span>
+                    <button class="bg-cyan-600 text-black px-6 py-2 text-xs font-black uppercase rounded hover:bg-white transition">CONTRATAR</button>
+                </div>
+            </div>
+        `).join('');
+
+        async function updateLogs() {
+            const l = document.getElementById('bot-logs');
+            try {
+                const r = await fetch(`https://api.github.com/repos/xexeu84/voyagers/actions/runs?t=${Date.now()}`);
+                const d = await r.json();
+                l.innerHTML = d.workflow_runs.slice(0, 10).map(w => `> [${w.status.toUpperCase()}] ${w.name}<br>`).join('') || "> Escaneando red...";
+            } catch(e) { l.innerHTML += "> Error de enlace.<br>"; }
+        }
+        setInterval(updateLogs, 10000);
+        updateLogs();
+    </script>
+</body>
+</html>

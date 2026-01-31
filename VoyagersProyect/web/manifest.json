@@ -1,0 +1,9 @@
+{
+  "name": "Voyagers Proyect",
+  "short_name": "Voyagers",
+  "start_url": "web/app.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [{ "src": "https://cdn-icons-png.flaticon.com/512/711/711191.png", "sizes": "512x512", "type": "image/png" }]
+}

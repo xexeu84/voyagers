@@ -1,0 +1,6 @@
+{
+    "comision": 0.15,
+    "max_peso_kg": 23,
+    "prohibido": ["sustancias ilegales", "armas", "dinero en efectivo"],
+    "moneda": "EUR"
+}
