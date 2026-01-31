@@ -1,0 +1,9 @@
+﻿{
+  "name": "Voyagers P2P Logistics",
+  "short_name": "Voyagers",
+  "start_url": "https://voyagerslogisticsportfolio.blogspot.com/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "Tu equipaje paga tu viaje. Logística P2P."
+}
