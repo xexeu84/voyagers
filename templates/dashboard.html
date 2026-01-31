@@ -2,82 +2,108 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyagers 2026 | Global Platform</title>
+    <title>Voyagers | El Futuro de la Logística P2P</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --main-green: #00ff41; --dark-bg: #050505; --card-bg: #121212; }
-        body { background: var(--dark-bg); color: white; font-family: 'Segoe UI', sans-serif; }
-        .sidebar { height: 100vh; background: black; border-right: 1px solid #222; position: fixed; width: 240px; }
-        .main-content { margin-left: 240px; padding: 20px; }
-        .nav-link { color: #888; transition: 0.3s; padding: 12px 20px; border-radius: 0; }
-        .nav-link:hover, .nav-link.active { color: var(--main-green); background: #111; border-left: 3px solid var(--main-green); }
-        .app-card { background: var(--card-bg); border: 1px solid #222; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
-        .profile-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--main-green); object-fit: cover; }
-        .chat-box { height: 300px; background: #000; border: 1px solid #333; overflow-y: scroll; padding: 15px; }
+        :root { --accent: #00ff41; --bg: #050505; --card: #121212; --text: #e0e0e0; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .sidebar { background: #000; height: 100vh; position: fixed; width: 260px; border-right: 1px solid #222; z-index: 1000; }
+        .main-content { margin-left: 260px; padding: 30px; transition: 0.3s; }
+        .nav-link { color: #888; padding: 15px 25px; display: flex; align-items: center; text-decoration: none; border-left: 4px solid transparent; }
+        .nav-link:hover, .nav-link.active { background: #111; color: var(--accent); border-left-color: var(--accent); }
+        .app-card { background: var(--card); border: 1px solid #222; border-radius: 16px; padding: 25px; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .profile-header { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
+        .profile-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--accent); }
+        .status-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; display: inline-block; margin-right: 5px; }
+        .chat-container { height: 250px; background: #080808; border-radius: 10px; padding: 15px; overflow-y: auto; border: 1px solid #222; }
+        .tab-content { display: none; } .tab-content.active { display: block; }
+        .btn-voyager { background: var(--accent); color: #000; font-weight: 700; border-radius: 8px; padding: 10px 20px; border: none; }
     </style>
 </head>
 <body>
-    <nav class="sidebar d-flex flex-column">
-        <div class="p-4"><h3 style="color:var(--main-green)">VOYAGERS</h3></div>
-        <a href="#" class="nav-link active"><i class="fas fa-home me-2"></i> Dashboard</a>
-        <a href="#" class="nav-link"><i class="fas fa-box me-2"></i> Área Cliente (Wallapop)</a>
-        <a href="#" class="nav-link"><i class="fas fa-truck me-2"></i> Área Transportista (Uber)</a>
-        <a href="#" class="nav-link"><i class="fas fa-comments me-2"></i> Chat y Soporte</a>
-        <a href="#" class="nav-link"><i class="fas fa-map-marked-alt me-2"></i> Mapa de Rutas</a>
-        <a href="#" class="nav-link mt-auto"><i class="fas fa-cog me-2"></i> Configuraciones</a>
-        <div class="p-3 border-top border-secondary">
-            <div class="d-flex align-items-center">
-                <img src="https://ui-avatars.com/api/?name=Marcus&background=00ff41&color=000" class="profile-img me-2">
-                <div><small class="d-block">Marcus CEO</small><span class="badge bg-success" style="font-size: 0.6em">ONLINE</span></div>
-            </div>
-        </div>
+
+<aside class="sidebar">
+    <div class="p-4 mb-4"><h2 class="fw-bold" style="color:var(--accent)">VOYAGERS</h2></div>
+    <nav>
+        <a href="javascript:void(0)" onclick="showTab('home')" class="nav-link active"><i class="fas fa-th-large me-3"></i> Dashboard</a>
+        <a href="javascript:void(0)" onclick="showTab('cliente')" class="nav-link"><i class="fas fa-shopping-bag me-3"></i> Área Cliente (Envío)</a>
+        <a href="javascript:void(0)" onclick="showTab('transportista')" class="nav-link"><i class="fas fa-steering-wheel me-3"></i> Área Transportista</a>
+        <a href="javascript:void(0)" onclick="showTab('chat')" class="nav-link"><i class="fas fa-comment-alt me-3"></i> Chat de Comunidad</a>
+        <a href="javascript:void(0)" onclick="showTab('soporte')" class="nav-link"><i class="fas fa-headset me-3"></i> Soporte 24/7</a>
+        <a href="javascript:void(0)" onclick="showTab('config')" class="nav-link"><i class="fas fa-user-cog me-3"></i> Mi Perfil</a>
     </nav>
+</aside>
 
-    <main class="main-content">
-        <div class="container-fluid">
-            <div class="app-card">
-                <h5><i class="fas fa-search-location me-2"></i> Búsqueda de Rutas Activas</h5>
-                <div class="row mt-3">
-                    <div class="col-md-5"><input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Origen"></div>
-                    <div class="col-md-5"><input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Destino"></div>
-                    <div class="col-md-2"><button class="btn btn-success w-100">BUSCAR</button></div>
+<main class="main-content">
+    <div id="home" class="tab-content active">
+        <div class="profile-header">
+            <img src="https://ui-avatars.com/api/?name=Marcus&background=00ff41&color=000" class="profile-img">
+            <div><h4 class="m-0">Hola, Marcus</h4><small><span class="status-dot"></span> Nivel CEO | 2026</small></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="app-card">
+                    <h5>Rutas Activas en Tiempo Real</h5>
+                    <div id="map" style="height: 300px; background: #000; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span class="text-muted"><i class="fas fa-map-marked-alt fa-3x mb-3 d-block text-center"></i> Cargando Mapas de Google/Mapbox...</span>
+                    </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="app-card">
-                        <h5><i class="fas fa-comment-dots me-2"></i> Chat de Soporte</h5>
-                        <div class="chat-box mb-2">
-                            <p class="small"><strong>Aki:</strong> Marcus, el motor de rutas está listo.</p>
-                            <p class="small text-end"><strong>Tú:</strong> Perfecto, inicia captación.</p>
-                            <p class="small"><strong>Soporte:</strong> ¿En qué podemos ayudarle hoy?</p>
-                        </div>
-                        <div class="input-group"><input type="text" class="form-control bg-dark text-white border-secondary"><button class="btn btn-outline-success">Enviar</button></div>
-                    </div>
-                </div>
-
-                <div class="col-md-8">
-                    <div class="app-card">
-                        <h5><i class="fas fa-boxes me-2"></i> Mis Envíos y Paquetes</h5>
-                        <div class="table-responsive">
-                            <table class="table table-dark table-borderless">
-                                <thead><tr><th>Producto</th><th>Estado</th><th>Transportista</th><th>Acción</th></tr></thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Maleta Técnica 5kg</td>
-                                        <td><span class="badge bg-primary">En Camino</span></td>
-                                        <td>Carlos R.</td>
-                                        <td><button class="btn btn-sm btn-outline-light">Ver QR</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <div class="col-md-4">
+                <div class="app-card">
+                    <h5>💰 Billetera</h5>
+                    <h2 class="text-white">1.240,50 €</h2>
+                    <p class="text-muted small">Comisiones por liquidar: 185,00 €</p>
+                    <button class="btn-voyager w-100">Retirar Fondos</button>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+
+    <div id="cliente" class="tab-content">
+        <h3>Publicar nuevo envío</h3>
+        <div class="app-card">
+            <div class="row">
+                <div class="col-md-6 mb-3"><label>¿Qué envías?</label><input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Ej: Maleta de mano 10kg"></div>
+                <div class="col-md-3 mb-3"><label>Origen</label><input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Madrid"></div>
+                <div class="col-md-3 mb-3"><label>Destino</label><input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Barcelona"></div>
+                <div class="col-md-12"><button class="btn-voyager">Buscar Transportista</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat" class="tab-content">
+        <h3>Mensajes Directos</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="app-card p-0">
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action bg-dark text-white border-secondary">Aki (CTO)</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-dark text-white border-secondary">Valentina (CMO)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="app-card">
+                    <div class="chat-container mb-3" id="chatBox">
+                        <p><strong>Aki:</strong> Marcus, el despliegue de la Super-App es un éxito.</p>
+                        <p><strong>Valentina:</strong> Tengo 10 leads listos para registrarse en el área de transportista.</p>
+                    </div>
+                    <div class="input-group"><input type="text" class="form-control bg-dark border-secondary text-white"><button class="btn btn-voyager">Enviar</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
 </body>
 </html>
