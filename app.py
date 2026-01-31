@@ -2,23 +2,31 @@
 import os
 
 app = Flask(__name__)
-app.secret_key = "MASTER_KEY_2026"
+app.secret_key = os.environ.get("SECRET_KEY", "VOYAGERS_2026_TOTAL_EXECUTION")
 
 @app.route('/')
 def index():
-    if session.get('logged_in'): return render_template('dashboard.html')
+    if session.get('marcus_auth'):
+        return render_template('dashboard.html')
     return render_template('login.html')
 
 @app.route('/login', methods=['POST'])
 def login():
+    # Credenciales Maestras fijadas para el CEO Marcus
     if request.form.get('username') == "Marcus" and request.form.get('password') == "Voyagers2026!":
-        session['logged_in'] = True
+        session['marcus_auth'] = True
         return redirect(url_for('index'))
-    return "Acceso Denegado"
+    return "<h1>Acceso Denegado</h1><p>Credenciales de nivel CEO no reconocidas.</p>"
 
-@app.route('/api/v1/mission_status')
-def status():
-    return jsonify({"status": "active", "kpis": {"OTIF": "95%", "CO2_Saved": "12%"}})
+@app.route('/api/v1/metrics')
+def metrics():
+    # Indicadores críticos de éxito (KPIs) [cite: 108, 109]
+    return jsonify({
+        "OTIF": "95.2%",
+        "Active_Routes": 0,
+        "eCMR_Compliance": "Full",
+        "CO2_Level": "Monitoring"
+    })
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))

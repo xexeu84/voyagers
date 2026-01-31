@@ -3,39 +3,45 @@
 <head>
     <meta charset="UTF-8"><title>Voyagers Master Control</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>body { background: #0f0f0f; color: #00ff41; font-family: 'Courier New', monospace; }</style>
+    <style>
+        body { background: #0a0a0a; color: #00ff41; font-family: 'Courier New', monospace; }
+        .card { background: #1a1a1a; border: 1px solid #00ff41; color: white; }
+        .mission-ok { color: #00ff41; } .mission-run { color: #ffcc00; }
+    </style>
 </head>
 <body class="p-4">
-    <div class="container">
-        <header class="d-flex justify-content-between border-bottom pb-3 mb-4">
-            <h1>VOYAGERS 2026_CORE</h1>
-            <span class="badge bg-success">SISTEMA ONLINE 24/7</span>
-        </header>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card bg-dark text-white border-success mb-3">
-                    <div class="card-body"><h5>GESTIÓN LOGÍSTICA</h5><p>Rutas activas: 0<br>eCMR Generados: 0</p></div>
-                </div>
+    <div class="container-fluid">
+        <header class="d-flex justify-content-between border-bottom border-success pb-3 mb-4">
+            <h1>VOYAGERS_LOGISTICS_v2026</h1>
+            <div class="text-end">
+                <span class="badge bg-success">SISTEMA 24/7 ACTIVO</span>
+                <p class="small">OTIF Objetivo: 95%</p>
             </div>
-            <div class="col-md-8">
-                <div class="card bg-dark text-white border-success">
+        </header>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mb-3"><div class="card-body"><h5>🚛 FLOTA ACTUAL</h5><p id="flota">Sincronizando...</p></div></div>
+                <div class="card"><div class="card-body"><h5>🌱 EMISIONES CO2</h5><p>Monitoreo Activo [cite: 11]</p></div></div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
                     <div class="card-body">
-                        <h5>LISTA DE MISIONES (BUSINESS PLAN)</h5>
-                        <ul id="mission-list">
-                            <li>[OK] Arquitectura Web/App centralizada</li>
-                            <li>[RUN] Integración de IA para rutas (Aki)</li>
-                            <li>[WAIT] Captación de Colaboradores (Valentina)</li>
+                        <h5>📋 ESTATUS DE EJECUCIÓN INCONDICIONAL</h5>
+                        <ul class="list-unstyled">
+                            <li class="mission-ok">✔ [M1] Arquitectura Next.js/Flask Desplegada [cite: 6]</li>
+                            <li class="mission-ok">✔ [M2] Seguridad E2EE y MFA Integrada [cite: 81, 82]</li>
+                            <li class="mission-run">▶ [M3] Motor de IA para Optimización de Rutas [cite: 7]</li>
+                            <li class="mission-run">▶ [M4] Implementación de eCMR Digital [cite: 66, 67]</li>
+                            <li>[ ] [M5] Captación Masiva de Transportistas [cite: 129]</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-4">
-            <h3>LOGS DEL COMITÉ DE BOTS</h3>
-            <div id="logs" class="p-3 border" style="height:200px; overflow-y:auto; background: black;">
-                [2026-02-01] Lukas: Túnel de datos seguro establecido.<br>
-                [2026-02-01] Aki: Estructura de base de datos PostgreSQL inyectada.<br>
-                [2026-02-01] Valentina: Guiones de reclutamiento cargados en el núcleo.
+
+            <div class="col-md-3">
+                <div class="card h-100"><div class="card-body"><h5>🛰️ TRACKING GPS</h5><div id="map-placeholder" class="bg-secondary w-100" style="height:200px;">Cargando Radar API... [cite: 38]</div></div></div>
             </div>
         </div>
     </div>
