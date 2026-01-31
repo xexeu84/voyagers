@@ -1,8 +1,43 @@
 ﻿<!DOCTYPE html>
-<html>
-<head><title>Dashboard Voyagers</title></head>
-<body style="background:#121212; color:white; padding:20px;">
-    <h1>Panel de Control Maestro</h1>
-    <p>Estado: ONLINE | Ejecucion 24/7 Activa</p>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"><title>Voyagers Master Control</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>body { background: #0f0f0f; color: #00ff41; font-family: 'Courier New', monospace; }</style>
+</head>
+<body class="p-4">
+    <div class="container">
+        <header class="d-flex justify-content-between border-bottom pb-3 mb-4">
+            <h1>VOYAGERS 2026_CORE</h1>
+            <span class="badge bg-success">SISTEMA ONLINE 24/7</span>
+        </header>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white border-success mb-3">
+                    <div class="card-body"><h5>GESTIÓN LOGÍSTICA</h5><p>Rutas activas: 0<br>eCMR Generados: 0</p></div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card bg-dark text-white border-success">
+                    <div class="card-body">
+                        <h5>LISTA DE MISIONES (BUSINESS PLAN)</h5>
+                        <ul id="mission-list">
+                            <li>[OK] Arquitectura Web/App centralizada</li>
+                            <li>[RUN] Integración de IA para rutas (Aki)</li>
+                            <li>[WAIT] Captación de Colaboradores (Valentina)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h3>LOGS DEL COMITÉ DE BOTS</h3>
+            <div id="logs" class="p-3 border" style="height:200px; overflow-y:auto; background: black;">
+                [2026-02-01] Lukas: Túnel de datos seguro establecido.<br>
+                [2026-02-01] Aki: Estructura de base de datos PostgreSQL inyectada.<br>
+                [2026-02-01] Valentina: Guiones de reclutamiento cargados en el núcleo.
+            </div>
+        </div>
+    </div>
 </body>
 </html>

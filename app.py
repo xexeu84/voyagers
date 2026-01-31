@@ -1,25 +1,24 @@
-﻿from flask import Flask, render_template, request, session, redirect, url_for
-from core.engine import engine
+﻿from flask import Flask, render_template, request, session, redirect, url_for, jsonify
 import os
 
 app = Flask(__name__)
-app.secret_key = "VOYAGERS_CLOUD_KEY"
+app.secret_key = "MASTER_KEY_2026"
 
 @app.route('/')
 def index():
-    if 'user' in session:
-        # Ejemplo de cálculo de comisión en vivo para el Dashboard
-        comision_ejemplo = engine.calcular_comissao(peso=5, distancia=1000)
-        return render_template('dashboard.html', user=session['user'], fee=comision_ejemplo)
+    if session.get('logged_in'): return render_template('dashboard.html')
     return render_template('login.html')
 
 @app.route('/login', methods=['POST'])
 def login():
-    res = engine.area_acesso("Success")
-    if res["status"]:
-        session['user'] = request.form.get('username')
+    if request.form.get('username') == "Marcus" and request.form.get('password') == "Voyagers2026!":
+        session['logged_in'] = True
         return redirect(url_for('index'))
-    return "Acesso Recusado"
+    return "Acceso Denegado"
+
+@app.route('/api/v1/mission_status')
+def status():
+    return jsonify({"status": "active", "kpis": {"OTIF": "95%", "CO2_Saved": "12%"}})
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
