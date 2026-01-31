@@ -1,0 +1,3 @@
+﻿[RECRUITMENT_SCRIPT_2026]
+Target: Viajeros Frecuentes.
+Mensaje: "Hola [Nombre], soy Marcus de Voyagers. Tu experiencia en [Area] es clave para nuestra red logistica 2026. ¿Colaboramos para monetizar tu equipaje con eCMR legal?"
