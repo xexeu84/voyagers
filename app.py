@@ -2,7 +2,7 @@
 import os
 
 app = Flask(__name__)
-app.secret_key = "MASTER_KEY_VOYAGERS"
+app.secret_key = "MASTER_KEY_VOYAGERS_2026"
 
 @app.route('/')
 def index():
@@ -11,10 +11,13 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def login():
-    if request.form.get('username') == "Marcus" and request.form.get('password') == "Voyagers2026!":
+    # Acceso forzado para el nivel CEO
+    user = request.form.get('username')
+    pw = request.form.get('password')
+    if user == "marcus" and pw == "Voyagers2026!":
         session['ceo_auth'] = True
         return redirect('/')
-    return "Credenciales de nivel CEO no reconocidas."
+    return "<h1>Acceso Denegado</h1><p>Credenciales CEO no validas.</p>"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 8080)))
