@@ -1,0 +1,6 @@
+﻿[env]
+PYTHONUNBUFFERED = "1"
+
+[processes]
+web = "python app.py"
+worker = "python core/deity.py"
