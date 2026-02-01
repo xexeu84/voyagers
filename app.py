@@ -1,26 +1,32 @@
 ﻿from flask import Flask, render_template, request, redirect, url_for
-import json
-import os
+import json, os
 
 app = Flask(__name__)
 DB_PATH = 'rutas.json'
 
 def cargar_rutas():
     if not os.path.exists(DB_PATH): return []
-    with open(DB_PATH, 'r') as f: return json.load(f)
+    with open(DB_PATH, 'r', encoding='utf-8') as f: return json.load(f)
 
 def guardar_ruta(nueva_ruta):
     rutas = cargar_rutas()
     rutas.insert(0, nueva_ruta)
-    with open(DB_PATH, 'w') as f: json.dump(rutas, f)
+    with open(DB_PATH, 'w', encoding='utf-8') as f: json.dump(rutas, f, indent=4)
 
 @app.route('/')
 def index():
-    rutas = cargar_rutas()
-    # Si no hay rutas, Aki mete datos de ejemplo
-    if not rutas:
-        rutas = [{"precio": "15.00", "trayecto": "Madrid - Barcelona", "peso": "5kg", "usuario": "Marcus"}]
-    return render_template('index.html', rutas=rutas)
+    return render_template('index.html', rutas=cargar_rutas())
+
+@app.route('/publicar', methods=['POST'])
+def publicar():
+    nueva = {
+        "precio": request.form.get('precio'),
+        "trayecto": f"{request.form.get('origen')} - {request.form.get('destino')}",
+        "peso": request.form.get('peso'),
+        "usuario": "Marcus" # Por ahora fijo hasta tener Login
+    }
+    guardar_ruta(nueva)
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
