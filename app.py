@@ -1,10 +1,6 @@
-﻿from flask import Flask, render_template, request, jsonify
-import json
-import os
-
+﻿from flask import Flask, render_template, os, json
 app = Flask(__name__)
 
-# Cargar métricas de forma segura
 def get_stats():
     if os.path.exists("metrics.json"):
         with open("metrics.json", "r") as f: return json.load(f)
@@ -12,7 +8,7 @@ def get_stats():
 
 @app.route('/')
 def dashboard():
-    return render_template('index.html', stats=get_stats(), page="dashboard")
+    return render_template('index.html', stats=get_stats())
 
 @app.route('/transportista')
 def transportista():
