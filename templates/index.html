@@ -2,66 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Voyagers - Control Maestro</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { background: #000; color: #fff; font-family: sans-serif; }
-        .sidebar { background: #0a0a0a; min-height: 100vh; border-right: 1px solid #222; }
-        .stat-card { background: #0f0f0f; border: 1px solid #333; border-radius: 12px; padding: 25px; transition: 0.3s; }
-        .stat-card:hover { border-color: #00ff41; box-shadow: 0 0 15px rgba(0,255,65,0.1); }
-        .accent { color: #00ff41; font-weight: bold; font-size: 2.2rem; }
-        .badge-verified { background: rgba(0, 255, 65, 0.1); color: #00ff41; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; }
-        .nav-link { color: #888; text-decoration: none; display: block; padding: 10px; border-radius: 5px; }
-        .nav-link:hover { background: #111; color: #00ff41; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyagers | Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 sidebar p-4">
-                <h3 class="text-success fw-bold mb-5">VOYAGERS</h3>
-                <nav class="nav flex-column gap-2">
-                    <a href="/" class="nav-link"><i class="fas fa-home me-2"></i> Dashboard</a>
-                    <a href="/transportista" class="nav-link"><i class="fas fa-plane me-2"></i> Área Viajero</a>
-                    <a href="/cliente" class="nav-link"><i class="fas fa-box me-2"></i> Área Empresa</a>
-                    <hr style="border-color: #333;">
-                    <button class="btn btn-outline-success btn-sm w-100" onclick="location.reload()">🔄 Actualizar</button>
-                </nav>
-            </div>
-            <div class="col-md-10 p-5">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h1>Panel General <span style="font-size: 0.4em; color: #444;">LIVE</span></h1>
-                    <span class="badge-verified"><i class="fas fa-check-circle"></i> VIAJERO PLATINO</span>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="stat-card">
-                            <small class="text-muted text-uppercase">Comisiones Totales</small>
-                            <div class="accent">{{ stats.comisiones_totales }}€</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-card">
-                            <small class="text-muted text-uppercase">Envíos Exitosos</small>
-                            <div class="accent text-info">{{ stats.envios_totales }}</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-card">
-                            <small class="text-muted text-uppercase">Alertas en Ruta</small>
-                            <div class="accent text-warning">1</div>
-                            <small class="text-warning">Empresa busca 5kg (MAD-BCN)</small>
-                        </div>
-                    </div>
-                </div>
+    <div class="sidebar">
+        <h2 style="color: #00ff41; font-weight: 900;">VOYAGERS</h2>
+        <nav style="margin-top: 3rem;">
+            <a href="/" class="nav-item active">🏠 Dashboard</a>
+            <a href="/transportista" class="nav-item">✈️ Área Viajero</a>
+            <a href="/cliente" class="nav-item">📦 Área Empresa</a>
+        </nav>
+    </div>
 
-                <div class="mt-5 p-4" style="background: #080808; border-radius: 15px; border: 1px dashed #333;">
-                    <h5 class="text-muted mb-3">Actividad del Sistema</h5>
-                    <p class="small text-secondary">🟢 Motor de sincronización: ONLINE</p>
-                    <p class="small text-secondary">🛡️ KYC Nivel 3 activado para la cuenta de Marcus.</p>
-                </div>
+    <div class="main-content">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Panel de Control</h1>
+            <div style="background: rgba(0,255,65,0.1); padding: 5px 15px; border-radius: 20px; color: #00ff41; border: 1px solid #00ff41;">
+                ● SISTEMA OPERATIVO
+            </div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <small style="color: #888;">COMISIONES TOTALES</small>
+                <div class="accent-value">{{ "%.2f"|format(stats.comisiones_totales) }}€</div>
+            </div>
+            <div class="stat-card">
+                <small style="color: #888;">ENVÍOS EXITOSOS</small>
+                <div class="accent-value" style="color: #00d4ff;">{{ stats.envios_totales }}</div>
+            </div>
+            <div class="stat-card">
+                <small style="color: #888;">AHORRO GENERADO</small>
+                <div class="accent-value" style="color: #ffaa00;">{{ stats.ahorro_usuarios }}€</div>
             </div>
         </div>
     </div>
