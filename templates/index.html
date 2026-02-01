@@ -1,27 +1,49 @@
 ﻿{% extends "base.html" %}
 {% block content %}
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1>Dashboard Operativo</h1>
-        <div style="color: #00ff41; font-family: monospace;">[ STATUS: ONLINE ]</div>
+<div class="container">
+    <div class="search-container">
+        <i class="fas fa-search text-muted me-3"></i>
+        <input type="text" class="form-control border-0" placeholder="¿A dónde envías hoy? Ej: Madrid, Londres...">
+        <button class="btn btn-vender ms-2">Buscar</button>
     </div>
 
-    <div class="stat-grid">
-        <div class="stat-card">
-            <small>BENEFICIO ACUMULADO</small>
-            <div class="accent-value">{{ "%.2f"|format(stats.comisiones_totales) }}€</div>
-        </div>
-        <div class="stat-card">
-            <small>OPERACIONES REALES</small>
-            <div class="accent-value" style="color: #00d4ff;">{{ stats.envios_totales }}</div>
-        </div>
+    <div class="category-bar rounded-4 shadow-sm">
+        <a href="#" class="category-item"><i class="fas fa-plane"></i>Avión</a>
+        <a href="#" class="category-item"><i class="fas fa-train"></i>Tren</a>
+        <a href="#" class="category-item"><i class="fas fa-car"></i>Coche</a>
+        <a href="#" class="category-item"><i class="fas fa-ship"></i>Barco</a>
+        <a href="#" class="category-item"><i class="fas fa-ellipsis-h"></i>Otros</a>
     </div>
 
-    <div class="stat-card" style="margin-top: 2rem; border-style: dashed; opacity: 0.8;">
-        <h5 style="color: #888;"><i class="fas fa-satellite-dish"></i> Telemetría de Sistema</h5>
-        <div style="font-family: monospace; font-size: 0.8rem; color: #00ff41; margin-top: 10px;">
-            > DB_SOURCE: metrics.json<br>
-            > SERVER_TIME: 2026-02-01<br>
-            > REPO_SYNC: STABLE
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold">Oportunidades cerca de ti</h4>
+        <span class="text-muted small">Mostrando envíos activos</span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="opportunity-card p-3">
+                <div class="d-flex justify-content-between align-items-start">
+                    <span class="badge bg-light text-dark mb-2">5kg Disponibles</span>
+                    <span class="text-success fw-bold">15.00€</span>
+                </div>
+                <h6 class="fw-bold mt-2">Madrid → Barcelona</h6>
+                <p class="text-muted small"><i class="far fa-calendar-alt"></i> Salida: Mañana, 09:00</p>
+                <button class="btn btn-outline-primary btn-sm w-100 mt-2 rounded-pill">Contactar</button>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="opportunity-card p-3">
+                <div class="d-flex justify-content-between">
+                    <span class="badge bg-info text-white mb-2">Tus Ganancias</span>
+                    <span class="fw-bold text-primary">{{ "%.2f"|format(stats.comisiones_totales) }}€</span>
+                </div>
+                <h6 class="fw-bold mt-2">Resumen de cuenta</h6>
+                <p class="text-muted small">Has completado {{ stats.envios_totales }} envíos.</p>
+                <a href="/transportista" class="btn btn-primary btn-sm w-100 mt-2 rounded-pill">Ver mi perfil</a>
+            </div>
         </div>
     </div>
+</div>
 {% endblock %}
