@@ -1,4 +1,7 @@
-﻿from flask import Flask, render_template, os, json
+﻿import os
+import json
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
 def get_stats():
