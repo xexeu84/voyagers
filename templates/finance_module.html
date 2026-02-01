@@ -1,0 +1,8 @@
+﻿<script>
+    function calcularPresupuesto(precio) {
+        const comision = 2.5 + (precio * 0.15);
+        const neto = precio - comision;
+        console.log(`Voyagers Fee: ${comision}€ | Conductor: ${neto}€`);
+        return { comision, neto };
+    }
+</script>
