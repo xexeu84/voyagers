@@ -1,11 +1,15 @@
-def calcular_p2p(kilos, valor_declarado):
-    precio_por_kilo = 5.0  # Media de ahorro vs mensajería oficial
-    pago_al_viajero = kilos * precio_por_kilo
-    comision_voyagers = pago_al_viajero * 0.20  # 20% por conectar usuarios
+def calcular_comision(valor_paquete):
+    """Calcula el desglose financiero con la tarifa fija de gestión."""
+    comision_rate = 0.15
+    fixed_fee = 2.50
+    moneda = "EUR"
+    
+    comision = (valor_paquete * comision_rate) + fixed_fee
+    pago_conductor = valor_paquete - comision
     
     return {
-        "kilos": kilos,
-        "pago_viajero": pago_al_viajero,
-        "comision": round(comision_voyagers, 2),
-        "ahorro_estimado_cliente": "50% vs DHL/UPS"
+        "monto_total": valor_paquete,
+        "comision_voyagers": round(comision, 2),
+        "pago_conductor": round(pago_conductor, 2),
+        "moneda": moneda
     }

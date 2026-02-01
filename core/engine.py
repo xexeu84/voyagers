@@ -1,31 +1,36 @@
 ﻿import os
 
-class VoyagersEngine:
+class VoyagersCore:
+    """
+    Núcleo de Lógica de Negocio Voyagers 3.0
+    Gestiona la valoración del espacio disponible en diferentes medios de transporte.
+    """
     def __init__(self):
-        self.equipa = ["Marcus", "Aki", "Valentina", "Lukas"]
-        self.versao = 2.0
-        self.fase_actual = 2
-        self.estado_sistema = True
-        self.comissao_taxa = 0.15  # 15% para a plataforma
+        self.team = ["Marcus", "Aki", "Valentina", "Lukas"]
+        self.version = "3.0-SPACE-MARKET"
+        # Reglas Financieras Inmutables
+        self.base_fee = 2.50
+        self.commission_pct = 0.15
 
-    def area_acesso(self, usuario_login):
-        """Traducao da Funcao Area_Acesso()"""
-        if usuario_login == "Success":
-            return {"status": True, "action": "Abrir Menu_Navegacao_PWA"}
-        return {"status": False, "action": "Recusar Acesso"}
+    def calcular_tarifa_sugerida(self, tipo_transporte, peso_kg, distancia_km):
+        """
+        Calcula el precio base sugerido dependiendo del medio de transporte.
+        El espacio en avión es más caro y rápido que en barco.
+        """
+        multiplicadores = {
+            "avion": 1.5,   # Alta velocidad, alto coste
+            "coche": 0.8,   # Economía colaborativa estándar
+            "barco": 0.5,   # Lento, barato, gran volumen
+            "camion": 0.6   # Logística terrestre
+        }
+        
+        factor = multiplicadores.get(tipo_transporte.lower(), 0.8)
+        precio_base = (peso_kg * factor) + (distancia_km * 0.05)
+        return round(precio_base, 2)
 
-    def calcular_comissao(self, peso, distancia):
-        """Traducao do Procedimento Calcular_Comissao()"""
-        # Taxa <- (Peso * 0.5) + (Distancia * 0.1)
-        taxa_base = (peso * 0.5) + (distancia * 0.1)
-        comissao_voyagers = taxa_base * self.comissao_taxa
-        return round(comissao_voyagers, 2)
+    def validar_espacio(self, dimensiones_cm, tipo_transporte):
+        # Lógica futura para validar si cabe en cabina/maletero
+        return True
 
-    def verificar_seguranca(self, riesgo_legal):
-        """Traducao da Regra de Seguranca e Legalidade"""
-        if riesgo_legal:
-            return "BLOQUEAR_OPERACAO: Notificar Marcus CEO"
-        return "OPERACAO_SEGURA"
-
-# Instancia para uso del sistema
-engine = VoyagersEngine()
+# Instancia global
+core_engine = VoyagersCore()

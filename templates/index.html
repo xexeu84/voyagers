@@ -1,17 +1,72 @@
-﻿{% extends "base.html" %}
+﻿﻿{% extends "base.html" %}
 {% block content %}
 <div class="container mt-5">
-    <h4 class="fw-bold mb-4">Últimas rutas publicadas</h4>
+    <h4 class="fw-bold mb-4">Mercado de Espacio Disponible</h4>
+    <p class="text-muted mb-4">Conectamos el espacio vacío en maletas, maleteros y bodegas con tus envíos.</p>
+    
+    <!-- Barra de búsqueda con ID para JS -->
+    <div class="search-box mb-4">
+        <input type="text" id="searchInput" placeholder="Busca por ciudad (ej: Madrid) o tipo (ej: Avión)...">
+        <button>Encontrar Espacio</button>
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+        <button id="sortPriceBtn" class="btn btn-outline-dark btn-sm rounded-pill">Ordenar por Precio ↕</button>
+    </div>
+
     <div class="row">
-        {% for ruta in rutas %}
-        <div class="col-6 col-md-3 mb-4">
+        {% for item in espacios %}
+        <div class="col-12 col-md-4 mb-4 space-card">
             <div class="item-card p-3">
-                <div class="item-price">{{ ruta.precio }} €</div>
-                <div class="item-title">{{ ruta.trayecto }} ({{ ruta.peso }})</div>
-                <div class="mt-2 text-muted small">Vendedor: {{ ruta.usuario }}</div>
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="item-price">{{ item.precio }} €</div>
+                    <div class="transport-icon text-success"><i class="fas {{ item.icono }} fa-lg"></i></div>
+                </div>
+                <div class="item-title mt-2">{{ item.trayecto }}</div>
+                <div class="small text-muted mt-1"><i class="fas fa-box-open"></i> {{ item.capacidad }}</div>
+                <div class="mt-3 pt-2 border-top small text-muted d-flex justify-content-between">
+                    <span>{{ item.usuario }}</span>
+                    <span class="badge bg-light text-dark border">{{ item.tipo|upper }}</span>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+
+<script>
+    // Lógica de filtrado cliente-servidor (Aki & Valentina)
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.space-card');
+
+        cards.forEach(card => {
+            let text = card.textContent.toLowerCase();
+            // Buscamos en todo el texto de la tarjeta (ciudad, tipo, usuario)
+            if (text.includes(filter)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    // Lógica de ordenación por precio (Ascendente/Descendente)
+    let isAscending = true;
+    document.getElementById('sortPriceBtn').addEventListener('click', function() {
+        const row = document.querySelector('.row');
+        const cards = Array.from(document.querySelectorAll('.space-card'));
+
+        cards.sort((a, b) => {
+            const priceA = parseFloat(a.querySelector('.item-price').textContent.replace('€', '').trim());
+            const priceB = parseFloat(b.querySelector('.item-price').textContent.replace('€', '').trim());
+            return isAscending ? priceA - priceB : priceB - priceA;
+        });
+
+        cards.forEach(card => row.appendChild(card));
+        
+        this.textContent = isAscending ? 'Precio: Menor a Mayor ⬆' : 'Precio: Mayor a Menor ⬇';
+        isAscending = !isAscending;
+    });
+</script>
 {% endblock %}

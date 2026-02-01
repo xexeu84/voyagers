@@ -1,13 +1,14 @@
-﻿import uuid
+﻿﻿import uuid
 
 class EscrowSystem:
-    def __init__(self, comision_rate=0.15):
+    def __init__(self, comision_rate=0.15, fixed_fee=2.50):
         self.comision_rate = comision_rate
+        self.fixed_fee = fixed_fee
         self.transacciones = {}
 
     def crear_pago(self, envio_id, monto_total):
         transaccion_id = f"PAY-{str(uuid.uuid4())[:6].upper()}"
-        comision = monto_total * self.comision_rate
+        comision = (monto_total * self.comision_rate) + self.fixed_fee
         pago_viajero = monto_total - comision
         
         self.transacciones[envio_id] = {
