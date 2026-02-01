@@ -1,29 +1,14 @@
 ﻿{% extends "base.html" %}
 {% block content %}
-<div class="hero-search pb-3">
-    <h2 class="fw-bold mb-4">Encuentra espacio para tu envío</h2>
-    <div class="search-box mx-auto"><input type="text" placeholder="Origen o Destino..."><button>Buscar</button></div>
-</div>
-<div class="filter-bar sticky-top shadow-sm">
-    <div class="container d-flex gap-2">
-        <button class="filter-btn">Peso: Todos</button>
-        <button class="filter-btn">Tamaño: Todos</button>
-        <button class="filter-btn">Urgencia</button>
-        <button class="filter-btn">Precio</button>
-    </div>
-</div>
-<div class="container mt-4">
+<div class="container mt-5">
+    <h4 class="fw-bold mb-4">Últimas rutas publicadas</h4>
     <div class="row">
-        {% for i in range(12) %}
+        {% for ruta in rutas %}
         <div class="col-6 col-md-3 mb-4">
-            <div class="item-card p-0">
-                <div style="height: 120px; background: #eee; width: 100%; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center; color: #ccc;"><i class="fas fa-box-open fa-2x"></i></div>
-                <div class="p-3">
-                    <div class="item-price">12,50 €</div>
-                    <div class="item-title">Barcelona - Valencia</div>
-                    <div class="mt-1"><span class="tag-weight">Hasta 2kg</span></div>
-                    <div class="mt-2 text-muted small" style="font-size: 0.7rem;">Salida: Hoy 18:00</div>
-                </div>
+            <div class="item-card p-3">
+                <div class="item-price">{{ ruta.precio }} €</div>
+                <div class="item-title">{{ ruta.trayecto }} ({{ ruta.peso }})</div>
+                <div class="mt-2 text-muted small">Vendedor: {{ ruta.usuario }}</div>
             </div>
         </div>
         {% endfor %}
