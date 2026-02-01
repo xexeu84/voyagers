@@ -2,40 +2,39 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyagers | Dashboard</title>
+    <title>Voyagers | Cloud Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="sidebar">
-        <h2 style="color: #00ff41; font-weight: 900;">VOYAGERS</h2>
-        <nav style="margin-top: 3rem;">
-            <a href="/" class="nav-item active">🏠 Dashboard</a>
-            <a href="/transportista" class="nav-item">✈️ Área Viajero</a>
-            <a href="/cliente" class="nav-item">📦 Área Empresa</a>
+        <h2 style="color: #00ff41;">VOYAGERS</h2>
+        <nav style="margin-top: 40px;">
+            <a href="/" class="nav-link">Dashboard</a>
+            <a href="/transportista" class="nav-link">Área Viajero</a>
+            <a href="/cliente" class="nav-link">Área Empresa</a>
         </nav>
     </div>
 
     <div class="main-content">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h1>Panel de Control</h1>
-            <div style="background: rgba(0,255,65,0.1); padding: 5px 15px; border-radius: 20px; color: #00ff41; border: 1px solid #00ff41;">
-                ● SISTEMA OPERATIVO
+        <header style="display: flex; justify-content: space-between;">
+            <h1>Dashboard Operativo</h1>
+            <div style="color: #00ff41; border: 1px solid #00ff41; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">
+                SISTEMA EN VIVO
             </div>
-        </div>
+        </header>
 
         <div class="stat-grid">
             <div class="stat-card">
-                <small style="color: #888;">COMISIONES TOTALES</small>
+                <small>BENEFICIO TOTAL</small>
                 <div class="accent-value">{{ "%.2f"|format(stats.comisiones_totales) }}€</div>
             </div>
             <div class="stat-card">
-                <small style="color: #888;">ENVÍOS EXITOSOS</small>
+                <small>OPERACIONES</small>
                 <div class="accent-value" style="color: #00d4ff;">{{ stats.envios_totales }}</div>
             </div>
             <div class="stat-card">
-                <small style="color: #888;">AHORRO GENERADO</small>
-                <div class="accent-value" style="color: #ffaa00;">{{ stats.ahorro_usuarios }}€</div>
+                <small>STATUS KYC</small>
+                <div class="accent-value" style="color: #fff; font-size: 1.5rem;">PLATINO</div>
             </div>
         </div>
     </div>
