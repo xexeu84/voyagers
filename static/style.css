@@ -9,3 +9,7 @@ body { background: var(--w-bg); font-family: 'Inter', sans-serif; margin: 0; }
 .item-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
 .item-price { font-size: 1.25rem; font-weight: 700; color: #2d3131; }
 .item-title { color: #6d7d7d; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.filter-bar { background: white; padding: 15px 0; border-bottom: 1px solid #e6ebeb; display: flex; gap: 10px; overflow-x: auto; }
+.filter-btn { border: 1px solid #d1d5db; border-radius: 20px; padding: 5px 15px; background: white; font-size: 0.85rem; white-space: nowrap; }
+.filter-btn:hover { border-color: #13c1ac; color: #13c1ac; }
+.tag-weight { background: #e0f2f1; color: #00796b; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
