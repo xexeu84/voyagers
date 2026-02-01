@@ -1,11 +1,27 @@
 ﻿{% extends "base.html" %}
 {% block content %}
-    <h1>Dashboard Operativo</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>Dashboard Operativo</h1>
+        <div style="color: #00ff41; font-family: monospace;">[ STATUS: ONLINE ]</div>
+    </div>
+
     <div class="stat-grid">
         <div class="stat-card">
-            <small>BENEFICIO</small>
+            <small>BENEFICIO ACUMULADO</small>
             <div class="accent-value">{{ "%.2f"|format(stats.comisiones_totales) }}€</div>
         </div>
-        <div id="dynamic-zone"></div>
+        <div class="stat-card">
+            <small>OPERACIONES REALES</small>
+            <div class="accent-value" style="color: #00d4ff;">{{ stats.envios_totales }}</div>
+        </div>
+    </div>
+
+    <div class="stat-card" style="margin-top: 2rem; border-style: dashed; opacity: 0.8;">
+        <h5 style="color: #888;"><i class="fas fa-satellite-dish"></i> Telemetría de Sistema</h5>
+        <div style="font-family: monospace; font-size: 0.8rem; color: #00ff41; margin-top: 10px;">
+            > DB_SOURCE: metrics.json<br>
+            > SERVER_TIME: 2026-02-01<br>
+            > REPO_SYNC: STABLE
+        </div>
     </div>
 {% endblock %}
